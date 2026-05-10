@@ -999,4 +999,60 @@ section[id] {
   .chi-sono__actions { display: flex; flex-direction: column; gap: 0.75rem; }
   .chi-sono__actions .btn { width: 100%; justify-content: center; }
 }
+.calendario-tour {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  font-family: inherit;
+  border-top: 1px solid #eee;
+}
 
+.tour-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.tour-row:not(.header):hover {
+  background-color: #f9f9f9;
+}
+
+.tour-row.header {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.tour-row div {
+  flex: 1;
+  padding: 0 10px;
+}
+
+/* VERSIONE MOBILE: La tabella si trasforma! */
+@media (max-width: 600px) {
+  .tour-row.header {
+    display: none; /* Nascondiamo l'intestazione su mobile */
+  }
+
+  .tour-row {
+    flex-direction: column;
+    padding: 1.5rem 0;
+  }
+
+  .tour-row div {
+    padding: 2px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tour-row div::before {
+    content: attr(data-label); /* Mostra "Data:", "Città:", ecc. */
+    font-weight: bold;
+    color: #555;
+    margin-right: 1rem;
+  }
+}
