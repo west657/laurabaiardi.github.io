@@ -1135,27 +1135,30 @@ section[id] {
 
   .tour-row {
     display: grid !important;
-    /* Qui definiamo le proporzioni: Data(150px) Città(150px) Libreria(Libera) Orario(100px) */
-    grid-template-columns: 150px 150px 1fr 100px !important; 
-    gap: 20px;
+    /* Usiamo 'max-content' per data e città così si allargano quanto serve */
+    /* Usiamo '1fr' per la libreria così prende tutto lo spazio rimanente */
+    grid-template-columns: minmax(120px, auto) minmax(120px, auto) 1fr minmax(80px, auto) !important; 
+    gap: 30px; /* Più spazio tra le colonne */
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
     align-items: center;
-    text-align: left;
   }
 
   .tour-row div {
     display: block !important;
-    /* Impedisce al testo di andare a capo in modo strano o di sovrapporsi */
-    white-space: normal; 
-    overflow: visible;
+    white-space: nowrap; /* IMPEDISCE alle parole di andare a capo */
+    text-align: left;
   }
 
-  /* Opzionale: rende l'intestazione più visibile */
+  /* Solo per la libreria (terza colonna) permettiamo di andare a capo se è lunghissima */
+  .tour-row div:nth-child(3) {
+    white-space: normal !important;
+  }
+
   .tour-row.header {
     font-weight: bold;
-    border-bottom: 2px solid #000;
     text-transform: uppercase;
-    color: #000;
+    font-size: 0.85rem;
+    color: #666;
   }
 }
