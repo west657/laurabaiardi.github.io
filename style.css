@@ -1162,3 +1162,11 @@ section[id] {
     color: #666;
   }
 }
+/* CENTRARE IL TITOLO EVENTI SENZA CAMBIARLO */
+#eventi h2 {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;    /* Un po' di spazio dalle foto sopra */
+  margin-bottom: 20px; /* Un po' di spazio dalla tabella sotto */
+  font-weight: normal; /* Lo mantiene non troppo pesante */
+}
