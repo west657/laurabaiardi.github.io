@@ -606,17 +606,19 @@ section[id] {
 
 .eventi__gallery {
   display: flex;
-  height: 50vh;
-  gap: 4px;
-  margin: 3rem 0;
+  height: 300px;      /* Altezza fissa più contenuta invece di 50vh */
+  gap: 15px;          /* Più spazio tra le due foto le fa sembrare più piccole e ordinate */
+  margin: 3rem auto;
+  max-width: 800px;   /* Questo impedisce alla galleria di allargarsi troppo su desktop */
 }
 
 .eventi__gallery img {
   flex: 1;
-  width: 50%;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain; /* MOSTRA L'IMMAGINE INTERA senza tagliarla */
+  background-color: #f9f9f9; /* Opzionale: aggiunge un leggero sfondo se le foto hanno proporzioni diverse */
+  border-radius: var(--radius);
 }
 
 .eventi__table {
