@@ -606,34 +606,41 @@ section[id] {
 
 .eventi__gallery {
   display: flex;
-  flex-wrap: wrap;         /* Permette di andare a capo */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   margin: 2rem auto;
   width: 100%;
   max-width: 1000px;
+  box-sizing: border-box; /* Include padding e bordi nel calcolo della larghezza */
+  overflow: hidden;       /* Impedisce a qualunque cosa di uscire dai bordi */
 }
 
 .eventi__gallery img {
-  width: 100%;             /* Occupa tutto lo spazio disponibile... */
-  max-width: 450px;        /* ...ma non superare i 450px su desktop */
-  height: 350px;           /* Altezza fissa per simmetria */
+  display: block;
+  width: 100%;            /* Importante per il mobile */
+  max-width: 450px;       /* Dimensione desktop */
+  height: 350px;
   object-fit: cover;
   border-radius: var(--radius);
+  box-sizing: border-box;
 }
 
-/* ORDINI SPECIFICI PER IL TELEFONO */
+/* FIX AGGRESSIVO PER MOBILE */
 @media (max-width: 768px) {
   .eventi__gallery {
-    flex-direction: column; /* Forza le immagini una sotto l'altra */
+    flex-direction: column;
     align-items: center;
-    padding: 0 20px;       /* Evita che tocchino i bordi del telefono */
+    padding: 0 15px !important; /* Spazio interno per non toccare i bordi */
+    gap: 20px;
   }
 
   .eventi__gallery img {
-    max-width: 100%;       /* Su mobile usa tutta la larghezza disponibile */
-    height: auto;          /* Su mobile è meglio l'altezza naturale per non sformarle */
+    max-width: 100% !important; /* Occupa tutta la larghezza dello schermo meno il padding */
+    height: auto !important;    /* Evita distorsioni su mobile */
+    margin: 0 auto;
   }
+}
 }
 .eventi__table {
   width: 100%;
