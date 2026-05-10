@@ -1170,3 +1170,19 @@ section[id] {
   margin-bottom: 20px; /* Un po' di spazio dalla tabella sotto */
   font-weight: normal; /* Lo mantiene non troppo pesante */
 }
+.btn--secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #c5a358; /* Colore oro come il resto del sito */
+    color: #c5a358;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.btn--secondary:hover {
+    background-color: #c5a358;
+    color: #1a1a1a; /* Lo sfondo scuro del tuo sito */
+}
