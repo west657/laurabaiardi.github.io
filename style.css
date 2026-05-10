@@ -616,29 +616,36 @@ section[id] {
   overflow: hidden;       /* Impedisce a qualunque cosa di uscire dai bordi */
 }
 
-.eventi__gallery img {
-  display: block;
-  width: 100%;            /* Importante per il mobile */
-  max-width: 450px;       /* Dimensione desktop */
-  height: 350px;
-  object-fit: cover;
-  border-radius: var(--radius);
+.eventi__gallery {
+  display: flex;
+  flex-direction: column; /* DI BASE: una sotto l'altra (ottimo per mobile) */
+  align-items: center;    /* Centrate */
+  gap: 20px;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 1000px;
   box-sizing: border-box;
+  padding: 0 15px;        /* Margine di sicurezza ai lati */
 }
 
-/* FIX AGGRESSIVO PER MOBILE */
-@media (max-width: 768px) {
-  .eventi__gallery {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 15px !important; /* Spazio interno per non toccare i bordi */
-    gap: 20px;
-  }
+.eventi__gallery img {
+  width: 100%;            /* Si adatta alla larghezza dello schermo */
+  max-width: 450px;       /* Ma non diventa gigante su computer */
+  height: auto;           /* Mantiene le proporzioni (niente tagli!) */
+  border-radius: var(--radius);
+  display: block;
+}
 
+/* QUANDO LO SCHERMO È GRANDE (Computer) */
+@media (min-width: 769px) {
+  .eventi__gallery {
+    flex-direction: row;  /* Mettile affiancate solo su desktop */
+    justify-content: center;
+  }
+  
   .eventi__gallery img {
-    max-width: 100% !important; /* Occupa tutta la larghezza dello schermo meno il padding */
-    height: auto !important;    /* Evita distorsioni su mobile */
-    margin: 0 auto;
+    height: 350px;        /* Altezza fissa solo su desktop per simmetria */
+    object-fit: cover;    /* Riempie bene il rettangolo */
   }
 }
 }
