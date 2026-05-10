@@ -345,10 +345,11 @@ section[id] {
 }
 
 .hero__reviews-img {
-  width: 100%;           /* Dice all'immagine di adattarsi allo spazio */
-  max-width: 700px;      /* Qui decidi la grandezza massima per il computer */
-  height: auto;          /* Mantiene le proporzioni */
-  display: block;        /* Aiuta a gestire meglio gli ingombri */
+  display: block;
+  width: auto !important;    /* Permette all'immagine di decidere la sua larghezza */
+  max-width: 100% !important; /* Impedisce categoricamente di superare il bordo del telefono */
+  height: auto;
+  margin: 0 auto;            /* La centra se dovesse servire */
   border-radius: var(--radius);
   transition: opacity var(--transition);
 }
