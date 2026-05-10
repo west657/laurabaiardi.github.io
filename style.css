@@ -606,21 +606,22 @@ section[id] {
 
 .eventi__gallery {
   display: flex;
-  justify-content: center; /* Centra le immagini */
-  align-items: flex-start; /* Evita che si allunghino per forza */
-  gap: 20px;               /* Spazio tra le foto */
+  flex-wrap: wrap;         /* Fondamentale: permette alle foto di andare a capo su mobile */
+  justify-content: center; 
+  gap: 20px;               
   margin: 2rem auto;
-  height: auto;            /* LIBERA l'altezza (non più 50vh) */
-  max-width: 1000px;       /* Larghezza massima della sezione */
+  height: auto;            
+  width: 100%;
+  max-width: 1000px;       
 }
 
 .eventi__gallery img {
-  flex: 0 1 400px;         /* Non crescere, ma restringiti se serve fino a 400px */
-  width: 100%;             /* Adattati allo spazio del flex */
-  height: auto;            /* L'ALTEZZA SI ADATTA ALLA FOTO (niente più tagli!) */
-  object-fit: scale-down;  /* Una sicurezza in più per non sgranare */
+  flex: 1 1 300px;         /* Prova a stare a 300px, ma occupa lo spazio disponibile */
+  max-width: 450px;        /* Impedisce alle foto di diventare giganti su desktop */
+  width: 100%;             
+  height: auto;            /* Niente tagli! */
+  object-fit: contain;     
   border-radius: var(--radius);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Opzionale: un tocco di eleganza */
 }
 
 .eventi__table {
