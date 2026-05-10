@@ -606,19 +606,21 @@ section[id] {
 
 .eventi__gallery {
   display: flex;
-  height: 300px;      /* Altezza fissa più contenuta invece di 50vh */
-  gap: 15px;          /* Più spazio tra le due foto le fa sembrare più piccole e ordinate */
-  margin: 3rem auto;
-  max-width: 800px;   /* Questo impedisce alla galleria di allargarsi troppo su desktop */
+  justify-content: center; /* Centra le immagini */
+  align-items: flex-start; /* Evita che si allunghino per forza */
+  gap: 20px;               /* Spazio tra le foto */
+  margin: 2rem auto;
+  height: auto;            /* LIBERA l'altezza (non più 50vh) */
+  max-width: 1000px;       /* Larghezza massima della sezione */
 }
 
 .eventi__gallery img {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* MOSTRA L'IMMAGINE INTERA senza tagliarla */
-  background-color: #f9f9f9; /* Opzionale: aggiunge un leggero sfondo se le foto hanno proporzioni diverse */
+  flex: 0 1 400px;         /* Non crescere, ma restringiti se serve fino a 400px */
+  width: 100%;             /* Adattati allo spazio del flex */
+  height: auto;            /* L'ALTEZZA SI ADATTA ALLA FOTO (niente più tagli!) */
+  object-fit: scale-down;  /* Una sicurezza in più per non sgranare */
   border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Opzionale: un tocco di eleganza */
 }
 
 .eventi__table {
