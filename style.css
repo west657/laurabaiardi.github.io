@@ -345,8 +345,10 @@ section[id] {
 }
 
 .hero__reviews-img {
-  max-width: 700px;
-  height: auto;
+  width: 100%;           /* Dice all'immagine di adattarsi allo spazio */
+  max-width: 700px;      /* Qui decidi la grandezza massima per il computer */
+  height: auto;          /* Mantiene le proporzioni */
+  display: block;        /* Aiuta a gestire meglio gli ingombri */
   border-radius: var(--radius);
   transition: opacity var(--transition);
 }
