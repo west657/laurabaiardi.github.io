@@ -1031,6 +1031,30 @@ section[id] {
   flex: 1;
   padding: 0 10px;
 }
+/* --- SEZIONE DESKTOP: SI ATTIVA SOLO SU SCHERMI GRANDI --- */
+@media (min-width: 769px) {
+  .calendario-tour {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+
+  .tour-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr; /* Crea le 4 colonne */
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+
+  /* Rende i testi più ordinati su desktop */
+  .tour-row div {
+    display: block; 
+    padding: 0 5px;
+  }
+}
 
 /* VERSIONE MOBILE: La tabella si trasforma! */
 @media (max-width: 600px) {
