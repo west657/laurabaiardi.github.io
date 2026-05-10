@@ -606,22 +606,35 @@ section[id] {
 
 .eventi__gallery {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;         /* Permette di andare a capo */
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin: 2rem auto;
+  width: 100%;
   max-width: 1000px;
 }
 
 .eventi__gallery img {
-  flex: 1 1 300px;    /* Si dividono lo spazio equamente */
-  max-width: 450px;   
-  height: 350px;      /* OBBLIGHIAMO entrambe ad avere la stessa altezza */
-  object-fit: cover;  /* Riempie il riquadro. Se taglia troppo, prova 'contain' */
-  object-position: center; /* Se taglia, tiene il centro della foto */
+  width: 100%;             /* Occupa tutto lo spazio disponibile... */
+  max-width: 450px;        /* ...ma non superare i 450px su desktop */
+  height: 350px;           /* Altezza fissa per simmetria */
+  object-fit: cover;
   border-radius: var(--radius);
 }
 
+/* ORDINI SPECIFICI PER IL TELEFONO */
+@media (max-width: 768px) {
+  .eventi__gallery {
+    flex-direction: column; /* Forza le immagini una sotto l'altra */
+    align-items: center;
+    padding: 0 20px;       /* Evita che tocchino i bordi del telefono */
+  }
+
+  .eventi__gallery img {
+    max-width: 100%;       /* Su mobile usa tutta la larghezza disponibile */
+    height: auto;          /* Su mobile è meglio l'altezza naturale per non sformarle */
+  }
+}
 .eventi__table {
   width: 100%;
   border-collapse: collapse;
