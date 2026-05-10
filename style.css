@@ -322,9 +322,10 @@ section[id] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 60px 80px 0;
-  max-width: 580px;
-  margin-left: auto;
+  padding: 80px 0; /* Riduciamo i padding laterali che rubano spazio */
+  width: 100%;     /* Fondamentale: occupa tutto lo spazio disponibile... */
+  max-width: 580px; /* ...ma non superare i 580px sui grandi schermi */
+  margin: 0 auto;  /* Centra la scatola nello schermo */
 }
 
 .hero__name {
