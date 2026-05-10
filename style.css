@@ -1123,10 +1123,39 @@ section[id] {
   }
 }
 
-/* --- SALVAGENTE FINALE (Mettilo sempre come ultimissima cosa) --- */
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-  margin: 0;
-  padding: 0;
+/* --- VERSIONE DEFINITIVA PER DESKTOP --- */
+@media (min-width: 769px) {
+  .calendario-tour {
+    display: block !important;
+    width: 100% !important;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .tour-row {
+    display: grid !important;
+    /* Qui definiamo le proporzioni: Data(150px) Città(150px) Libreria(Libera) Orario(100px) */
+    grid-template-columns: 150px 150px 1fr 100px !important; 
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    text-align: left;
+  }
+
+  .tour-row div {
+    display: block !important;
+    /* Impedisce al testo di andare a capo in modo strano o di sovrapporsi */
+    white-space: normal; 
+    overflow: visible;
+  }
+
+  /* Opzionale: rende l'intestazione più visibile */
+  .tour-row.header {
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    text-transform: uppercase;
+    color: #000;
+  }
 }
