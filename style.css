@@ -322,10 +322,12 @@ section[id] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 0; /* Riduciamo i padding laterali che rubano spazio */
-  width: 100%;     /* Fondamentale: occupa tutto lo spazio disponibile... */
-  max-width: 580px; /* ...ma non superare i 580px sui grandi schermi */
-  margin: 0 auto;  /* Centra la scatola nello schermo */
+  padding: 40px 20px; /* Padding ridotto e bilanciato per il mobile */
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  box-sizing: border-box; /* IMPORTANTE: include i padding nella larghezza */
+  overflow: hidden;       /* Taglia qualsiasi cosa provi a uscire */
 }
 
 .hero__name {
@@ -347,12 +349,9 @@ section[id] {
 
 .hero__reviews-img {
   display: block;
-  width: auto !important;    /* Permette all'immagine di decidere la sua larghezza */
-  max-width: 100% !important; /* Impedisce categoricamente di superare il bordo del telefono */
+  max-width: 100% !important; /* Non può mai superare la larghezza del padre */
   height: auto;
-  margin: 0 auto;            /* La centra se dovesse servire */
-  border-radius: var(--radius);
-  transition: opacity var(--transition);
+  margin: 0 auto;
 }
 
 .hero__reviews-link:hover .hero__reviews-img {
