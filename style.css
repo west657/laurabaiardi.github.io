@@ -999,6 +999,4 @@ section[id] {
   .chi-sono__actions { display: flex; flex-direction: column; gap: 0.75rem; }
   .chi-sono__actions .btn { width: 100%; justify-content: center; }
 }
-* {
-  outline: 1px solid red !important;
-}
+
