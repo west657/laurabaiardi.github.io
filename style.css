@@ -1099,3 +1099,34 @@ section[id] {
     margin-right: 1rem;
   }
 }
+/* --- AGGIUNTA PER TABELLA DESKTOP --- */
+@media (min-width: 769px) {
+  .calendario-tour {
+    display: block !important;
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+
+  .tour-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr; /* Forza le 4 colonne */
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+  }
+
+  .tour-row div {
+    display: block !important; /* Annulla eventuali flex del mobile */
+    text-align: left;
+  }
+}
+
+/* --- SALVAGENTE FINALE (Mettilo sempre come ultimissima cosa) --- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
