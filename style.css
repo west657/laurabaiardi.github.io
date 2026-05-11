@@ -1220,8 +1220,8 @@ section[id] {
 }
 /* INGRANDIAMO SOLO L'HEADER */
 .nav {
-    padding-top: 25px !important;    /* Spazio sopra il tuo nome */
-    padding-bottom: 25px !important; /* Spazio sotto il tuo nome */
+    padding-top: 15px !important;    /* Spazio sopra il tuo nome */
+    padding-bottom: 15px !important; /* Spazio sotto il tuo nome */
     height: auto !important;         /* Permette all'header di adattarsi al nuovo spazio */
 }
 
