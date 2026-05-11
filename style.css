@@ -1259,3 +1259,22 @@ section[id] {
         margin-top: 80px !important; 
     }
 }
+/* FORZA IL COLORE CREMA E TESTI NERI SU OGNI DISPOSITIVO */
+.nav, 
+.nav-overlay {
+    background-color: #f5f5dc !important; /* Il tuo crema */
+}
+
+/* Rende tutto il testo e l'hamburger neri */
+.nav__logo, 
+.nav__link, 
+.nav-overlay__link,
+.nav__hamburger span,
+.nav-overlay__close {
+    color: #000000 !important;
+}
+
+/* Specifica per le tre lineette dell'hamburger su mobile */
+.nav__hamburger span {
+    background-color: #000000 !important;
+}
