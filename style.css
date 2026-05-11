@@ -1186,7 +1186,7 @@ section[id] {
     background-color: #c5a358;
     color: #1a1a1a; /* Lo sfondo scuro del tuo sito */
 }
-header {
+<!--header {
     padding: 40px 0; /* Il primo numero (40) gestisce lo spazio sopra e sotto */
     /* Se vuoi che sia ancora più grande, prova con 60px o 80px */
 }
@@ -1212,8 +1212,18 @@ header {
     font-size: 2.5rem; 
     letter-spacing: 2px;
     text-transform: uppercase;
-}
+}-->
 .btn-webinar {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+.nav {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+
+a[href="#webinar"] {
     background-color: transparent !important;
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
