@@ -1218,13 +1218,15 @@ section[id] {
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
 }
+/* INGRANDIAMO SOLO L'HEADER */
 .nav {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
+    padding-top: 50px !important;    /* Spazio sopra il tuo nome */
+    padding-bottom: 50px !important; /* Spazio sotto il tuo nome */
+    height: auto !important;         /* Permette all'header di adattarsi al nuovo spazio */
 }
 
-a[href="#webinar"] {
-    background-color: transparent !important;
-    color: #ffffff !important;
-    border: 2px solid #ffffff !important;
+/* Allineiamo tutto al centro verticalmente */
+.nav__inner {
+    display: flex;
+    align-items: center !important;
 }
