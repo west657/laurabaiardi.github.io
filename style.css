@@ -1278,3 +1278,22 @@ section[id] {
 .nav__hamburger span {
     background-color: #000000 !important;
 }
+/* Rende il contenitore del logo flessibile */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Gestisce l'immagine del logo */
+.nav__logo-img {
+  height: 45px;       /* Regola questa altezza per farlo stare bene nel tuo header */
+  width: auto;        /* Mantiene le proporzioni */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Effetto al passaggio del mouse */
+.nav__logo-img:hover {
+  transform: scale(1.1);
+}
