@@ -1445,6 +1445,19 @@ body {
     gap: 20px;
 }
 
+/* 1. Il contenitore dell'archivio */
+.archive-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0dbcd;
+    transition: all 0.4s ease-in-out;
+}
+
+/* 2. LA REGOLA MAGICA: Questa nasconde i box finché non clicchi sul bottone */
+.archive-container.hidden {
+    display: none !important;
+}
+
 /* Box storici: più minimalisti (Senza bordi oro per non appesantire) */
 .news-box-archive {
     background-color: #ffffff;
