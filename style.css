@@ -1297,3 +1297,172 @@ section[id] {
 .nav__logo-img:hover {
   transform: scale(1.1);
 }
+
+/* SFONDO GENERALE DELLA PAGINA BEIGE CHIARO */
+body {
+    background-color: #f7f4eb;
+    color: #1a1a1a;
+    font-family: Arial, sans-serif; /* O il font che usi già */
+    margin: 0;
+    padding: 0;
+}
+
+/* LA SEZIONE DEL DIARIO */
+.news-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.news-section h2 {
+    font-size: 2em;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.news-subtitle {
+    color: #4a4a4a;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+/* IL CONTENITORE FINESTRA (Rende invisibili i 3 box a destra su PC) */
+.gallery-container {
+    overflow-x: auto; /* Attiva lo scorrimento orizzontale */
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Fluidità massima su smartphone */
+}
+
+/* IL BINARIO DEL CAROSELLO */
+.gallery-track {
+    display: flex;
+    gap: 20px;
+}
+
+/* IL SINGOLO BOX DEL CAROSELLO (3 precisi su PC) */
+.news-box {
+    flex: 0 0 calc(33.333% - 14px); /* Calcolo matematico per averne 3 visibili */
+    min-width: 290px; /* Impedisce ai box di schiacciarsi troppo */
+    background-color: #ffffff; /* Box bianco per staccare dal fondo beige */
+    border: 2px solid #d4af37; /* Il tuo iconico tocco d'oro sui bordi */
+    padding: 25px;
+    border-radius: 6px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.news-box:hover {
+    transform: translateY(-4px); /* Micro-animazione elegante */
+}
+
+/* ELEMENTI INTERNI AI BOX (Colori Accessibili) */
+.news-tag {
+    background-color: #d4af37; /* Sfondo oro per il tag */
+    color: #ffffff; /* Testo bianco dentro l'oro per il contrasto */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.news-date {
+    display: block;
+    font-size: 0.85em;
+    color: #4a4a4a; /* Grigio scuro leggibile */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.news-box h3 {
+    margin: 5px 0 12px 0;
+    font-size: 1.25em;
+    color: #1a1a1a;
+}
+
+.news-box p {
+    font-size: 0.95em;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* LINK ACCESSIBILI (Blu scuro ad alto contrasto e sottolineati) */
+.news-box a {
+    color: #004fb0; 
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.news-box a:hover {
+    color: #d4af37; /* L'oro si attiva solo quando ci passi sopra col mouse */
+}
+
+/* SEZIONE BOTTONE ARCHIVIO */
+.archive-toggle-container {
+    margin-top: 40px;
+}
+
+.btn-archive {
+    background-color: transparent;
+    border: 2px solid #d4af37;
+    color: #1a1a1a; /* Testo scuro su fondo beige */
+    font-weight: bold;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-archive:hover {
+    background-color: #d4af37;
+    color: #ffffff; /* Diventa oro pieno con testo bianco */
+}
+
+/* IL CASSETTO ARCHIVIO */
+.archive-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0dbcd; /* Linea di divisione sul beige */
+}
+
+/* Classe JavaScript per nascondere il cassetto */
+.archive-container.hidden {
+    display: none;
+}
+
+/* LA GRIGLIA DELL'ARCHIVIO (I vecchi box si dispongono ordinati) */
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+}
+
+/* Box storici: più minimalisti (Senza bordi oro per non appesantire) */
+.news-box-archive {
+    background-color: #ffffff;
+    border: 1px solid #e0dbcd;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.news-box-archive h3 {
+    margin: 5px 0 10px 0;
+    font-size: 1.15em;
+    color: #1a1a1a;
+}
+
+/* RESPONSIVE PER SARTPHONE: Mostra 1 box intero e un pezzetto del secondo */
+@media (max-width: 768px) {
+    .news-box {
+        flex: 0 0 85%; /* Ottimo per il pollice, si capisce subito che si può scorrere! */
+    }
+}
