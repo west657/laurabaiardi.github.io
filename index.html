@@ -490,6 +490,22 @@ Sparatorie, passioni proibite e vendette incrociate animano un western dal ritmo
 
   </div> 
 </section>
+
+<script>
+    document.getElementById('toggle-archive').addEventListener('click', function() {
+        var drawer = document.getElementById('archive-drawer');
+        var isHidden = drawer.classList.contains('hidden');
+        
+        if (isHidden) {
+            drawer.classList.remove('hidden');
+            this.textContent = 'Chiudi archivio ↑';
+            this.setAttribute('aria-expanded', 'true');
+        } else {
+            drawer.classList.add('hidden');
+            this.textContent = 'Archivio news ↓';
+            this.setAttribute('aria-expanded', 'false');
+        }
+    });
 </script>
   <footer class="footer">
   <div class="container footer__inner">
